@@ -3,19 +3,24 @@
 Published builds of the **KolVa agent**. Each release is produced automatically from the
 KolVa source repository and published here.
 
+## 📥 [Installation guide](docs/installer-manual.md)
+
+Step-by-step instructions for Windows, macOS and Linux — including the one-time security
+warning Windows and macOS each show, and what to click.
+
 ## Downloads
 
 Go to [**Releases**](../../releases) and pick the latest.
 
-| file | platform |
-|---|---|
-| `KolvaAgent-win.zip` | Windows — unzip, run `install.ps1` |
-| `kolva-agent-linux-desktop.tar.gz` | Linux desktop — extract, run `install.sh` |
-| `KolvaAgent-macos.zip` | macOS — unzip, run `install.sh` |
-| `kolva-agent-linux-amd64` | Linux server — headless binary, no tray |
+| file | platform | installer |
+|---|---|---|
+| `KolvaAgent-win.zip` | Windows | ✅ `install.ps1` inside |
+| `KolvaAgent-macos.zip` | macOS | ✅ `install.sh` inside |
+| `kolva-agent-linux-desktop.tar.gz` | Linux with a desktop | ✅ `install.sh` inside |
+| `kolva-agent-linux-amd64` | Linux server / headless | ⚠️ none yet — bare program, run by hand |
 
-The bare binaries beside the archives are what an installed agent downloads when it updates
-itself. For a first install, use the archive for your platform.
+The other bare binaries beside the archives are what an already-installed agent downloads when
+it updates itself. **For a first install, use the archive for your platform.**
 
 ## Verifying a release
 
