@@ -178,6 +178,9 @@ not start — click to try again"*, and you can.
 
 > **This cannot be undone.** Removing the agent unlinks WhatsApp and erases this computer's
 > enrollment. To use KolVa on this computer again you will install and link it from scratch.
+>
+> **Your conversations and contacts are not affected.** They live in KolVa, not on this
+> computer — when you link again, they are still there.
 
 ## Linux — server / headless
 
