@@ -7,8 +7,12 @@ There are two pieces, and most people want both:
   background with a small tray icon, starts when you log in, and keeps itself up to date.
   Install it **once**, on the computer that stays on.
 
-> ⏳ **The first release has not been published yet.** These instructions describe what the
-> downloads will be. Until the first release appears there is nothing to download yet.
+# ⏳ There is nothing to download yet
+
+**The first release has not been published.** These instructions describe what the downloads
+**will** be. Until the first release appears there is nothing to install.
+
+---
 
 Download from the [**latest release**](../../releases/latest) — that link always resolves to the
 newest build. Releases are tagged `kolva-ui-v…` for the app and `kolva-agent-v…` for the agent.
@@ -153,6 +157,13 @@ Each release carries a signed manifest listing every file and its checksum. The 
 that signature — against a key built into it — *before* it decides whether a newer version
 exists, so it will refuse anything it cannot verify, and nobody can quietly hide an update
 from it.
+
+# Removing it
+
+**Self-service removal is coming in the first release.** It is not built yet, so this page does
+not yet describe how to do it — and you should not try to remove the agent by deleting its files
+yourself, which can leave it running with its data gone. If you need it removed before this page
+is updated, contact support.
 
 # Troubleshooting
 
