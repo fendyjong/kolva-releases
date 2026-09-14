@@ -160,10 +160,47 @@ from it.
 
 # Removing it
 
-**Self-service removal is coming in the first release.** It is not built yet, so this page does
-not yet describe how to do it — and you should not try to remove the agent by deleting its files
-yourself, which can leave it running with its data gone. If you need it removed before this page
-is updated, contact support.
+## Windows, macOS and Linux with a desktop
+
+Open the KolVa tray menu and choose **Uninstall KolVa**.
+
+**It asks twice, on purpose.** The first click does not remove anything — the menu item changes
+to read *"Click again to remove KolVa — unlinks WhatsApp and erases this computer's
+enrollment"*, and the tray tooltip says the same. Click it a second time, shortly after, to go
+ahead.
+
+**To change your mind, do nothing.** The item goes back to normal on its own. Opening the
+dashboard or restarting the computer also cancels it.
+
+While it works the item reads *"Removing KolVa…"*. **When the tray icon disappears, it is
+done** — that is how you know it finished. If something goes wrong the item says *"Uninstall did
+not start — click to try again"*, and you can.
+
+> **This cannot be undone.** Removing the agent unlinks WhatsApp and erases this computer's
+> enrollment. To use KolVa on this computer again you will install and link it from scratch.
+
+## Linux — server / headless
+
+There is no tray on a server, so run:
+
+```bash
+sudo /etc/kolva-agent/uninstall.sh
+```
+
+## If the tray is not available
+
+Each install also leaves an uninstaller on disk:
+
+| platform | run this |
+|---|---|
+| macOS | `/Applications/Kolva Agent.app/Contents/Resources/uninstall.sh` |
+| Linux desktop | `~/.config/kolva-agent/uninstall.sh` |
+| Windows | `%LOCALAPPDATA%\KolvaAgent\uninstall.ps1` |
+| Linux server | `sudo /etc/kolva-agent/uninstall.sh` |
+
+**Use the tray item or one of these scripts — nothing else.** They stop the agent before
+removing anything, and skipping that step can leave the agent running with its data already
+gone.
 
 # Troubleshooting
 
