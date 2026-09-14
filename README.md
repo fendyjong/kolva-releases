@@ -1,34 +1,71 @@
 # KolVa releases
 
-Published builds of the **KolVa agent**. Each release is produced automatically from the
-KolVa source repository and published here.
+Published builds of **KolVa** — the app you use, and the agent that connects your WhatsApp
+number to it. Both are built automatically from the KolVa source repository and published here.
+
+> ⏳ **The first release has not been published yet.** This page describes what the downloads
+> will be and how to install them. Until the first release appears, the link below will show an
+> empty releases page — that is expected, not a fault.
 
 ## 📥 [Installation guide](docs/installer-manual.md)
 
-Step-by-step instructions for Windows, macOS and Linux — including the one-time security
-warning Windows and macOS each show, and what to click.
+Step-by-step instructions for every platform — including the one-time security warning
+Windows and macOS each show, and exactly what to click.
 
 ## Downloads
 
-Go to [**Releases**](../../releases) and pick the latest.
+### 👉 [**Get the latest release**](../../releases/latest)
 
-| file | platform | installer |
-|---|---|---|
-| `KolvaAgent-win.zip` | Windows | ✅ `install.ps1` inside |
-| `KolvaAgent-macos.zip` | macOS | ✅ `install.sh` inside |
-| `kolva-agent-linux-desktop.tar.gz` | Linux with a desktop | ✅ `install.sh` inside |
-| `kolva-agent-linux-amd64` | Linux server / headless | ⚠️ none yet — bare program, run by hand |
+That link always resolves to the newest build — there is no version to remember, and nothing
+here goes stale when a new one is published.
 
-The other bare binaries beside the archives are what an already-installed agent downloads when
-it updates itself. **For a first install, use the archive for your platform.**
+Releases come in two families, and you can tell them apart by the tag:
+
+| tag | what it is |
+|---|---|
+| `kolva-ui-v…` | **the KolVa app** — the thing you look at and click |
+| `kolva-agent-v…` | **the KolVa agent** — runs quietly in the background and connects WhatsApp |
+
+Most people want **both**: install the app on your computer or phone, and the agent on the
+computer that will stay on.
+
+### The app
+
+| file | platform |
+|---|---|
+| `KolVa-<version>-Setup.exe` | Windows |
+| `kolva_<version>_amd64.deb` | Linux (Debian, Ubuntu and derivatives) |
+| `KolVa-<version>.apk` | Android |
+
+The app's filenames carry the version; `<version>` above is whatever the release you are on
+says. Take the files from the release page rather than typing a name by hand.
+
+### The agent
+
+| file | platform |
+|---|---|
+| `kolva-agent.exe` | Windows |
+| `kolva-agent-darwin` | macOS (Intel and Apple Silicon, one file) |
+| `kolva-agent-linux-desktop` | Linux with a desktop |
+| `kolva-agent-linux-amd64` | Linux server / headless |
+
+**The agent's filenames carry no version** — the version is in the release tag
+(`kolva-agent-v…`), so the file you download from a given release is always named the same.
+
+🔑 **Each of these four files IS the installer.** There is nothing to unpack: you download one
+file and run it. Running it with no arguments installs it. The same file is also what an
+already-installed agent downloads when it updates itself — there is no separate "installer"
+and "program".
 
 ## Verifying a release
 
-Every release carries `manifest.json` and `manifest.sig.json`. The manifest lists each
-artifact with its size and SHA-256; the signature is Ed25519 over the exact manifest bytes.
+Every agent release also carries `manifest.json` and `manifest.sig.json`. **These are not
+downloads for you** — they are how an installed agent checks itself.
 
-An installed agent checks this automatically before applying an update, against a public key
-compiled into the binary — so an agent will refuse an update it cannot verify.
+The manifest lists each file with its SHA-256, and the signature is Ed25519 over the exact
+manifest bytes. An installed agent verifies that signature *before* it decides whether a newer
+version exists, against a public key compiled into it. That ordering is deliberate: it means
+nobody can serve an agent a stale version list to keep it from noticing an urgent update.
 
 ## Support
 
