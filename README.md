@@ -1,13 +1,5 @@
 # KolVa releases
 
-# ⏳ There is nothing to download yet
-
-**The first release has not been published.** Everything below describes what the downloads
-**will** be and how to install them. Until the first release appears, the releases page is
-empty — that is expected, not a fault.
-
----
-
 Published builds of **KolVa** — the app you use, and the agent that connects your WhatsApp
 number to it. Both are built automatically from the KolVa source repository and published here.
 
@@ -72,6 +64,10 @@ version exists, against a public key compiled into it. That ordering is delibera
 nobody can serve an agent a stale version list to keep it from noticing an urgent update.
 
 ## Support
+
+**This is the first KolVa release.** If something does not work, please tell support rather than
+working around it — on a first release you may well be the first person to hit it, and that is
+useful to know.
 
 This repository holds build artifacts only. For help with KolVa, contact support through the
 application.

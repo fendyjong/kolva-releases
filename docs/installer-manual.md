@@ -7,13 +7,6 @@ There are two pieces, and most people want both:
   background with a small tray icon, starts when you log in, and keeps itself up to date.
   Install it **once**, on the computer that stays on.
 
-# ⏳ There is nothing to download yet
-
-**The first release has not been published.** These instructions describe what the downloads
-**will** be. Until the first release appears there is nothing to install.
-
----
-
 Download from the [**latest release**](../../releases/latest) — that link always resolves to the
 newest build. Releases are tagged `kolva-ui-v…` for the app and `kolva-agent-v…` for the agent.
 
@@ -144,9 +137,15 @@ There is **no macOS or iOS build of the app.** The agent runs on macOS; the app 
 
 # After installing
 
-The agent needs to be linked to your KolVa organisation before it does anything. Open KolVa,
-go to your WhatsApp settings, and follow the linking steps there. The agent finds the rest on
-its own.
+**The agent does nothing until you link a WhatsApp number to it.** It will start, sit in the
+tray and connect to KolVa, but it cannot send or receive a message until it is linked — so if
+you have installed it and nothing is happening, this is the step you are missing.
+
+Open the KolVa app, go to your WhatsApp settings, and follow the linking steps there. The agent
+finds the rest on its own.
+
+**This is the first KolVa release.** If something does not work, tell support rather than
+working around it — you may be the first to hit it.
 
 # Updating
 
