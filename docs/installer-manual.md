@@ -7,8 +7,9 @@ There are two pieces, and most people want both:
   background with a small tray icon, starts when you log in, and keeps itself up to date.
   Install it **once**, on the computer that stays on.
 
-Download from the [**latest release**](../../releases/latest) — that link always resolves to the
-newest build. Releases are tagged `kolva-ui-v…` for the app and `kolva-agent-v…` for the agent.
+Download from the [**latest app release**](https://github.com/fendyjong/kolva-releases/releases/latest) — that link always resolves to the
+newest build. Agent releases are listed separately: [**all agent releases**](https://github.com/fendyjong/kolva-releases/releases?q=kolva-agent).
+Releases are tagged `kolva-app-v…` for the app and `kolva-agent-v…` for the agent.
 
 > **These builds are not code-signed.** Windows and macOS each warn you once, the first time
 > you run something new. The steps below tell you exactly what you will see and what to click.
@@ -22,7 +23,7 @@ to unpack and no script to find. Download it, run it, done.
 
 ## Windows
 
-**Download:** `kolva-agent.exe`
+**Download:** `kolva-agent-windows-v<version>.exe`
 
 1. Double-click it.
 2. **Windows shows a blue "Windows protected your PC" box.** Click **More info**, then
@@ -33,15 +34,15 @@ local app data folder and adds a startup entry so the tray appears when you log 
 
 ## macOS
 
-**Download:** `kolva-agent-darwin` — one file for both Intel and Apple Silicon.
+**Download:** `kolva-agent-mac-v<version>` — one file for both Intel and Apple Silicon.
 
 Double-click it.
 
 If macOS refuses, open **Terminal**, `cd` to your Downloads folder and run:
 
 ```bash
-chmod +x kolva-agent-darwin
-./kolva-agent-darwin
+chmod +x kolva-agent-mac-v<version>
+./kolva-agent-mac-v<version>
 ```
 
 Installs for your user only — no administrator password needed. It clears the download
@@ -54,13 +55,13 @@ ever stops.
 For a machine with a normal desktop session. **If this is a server with no desktop, see the
 next section.**
 
-**Download:** `kolva-agent-linux-desktop`
+**Download:** `kolva-agent-linux-desktop-v<version>`
 
 Double-click it, or from a terminal:
 
 ```bash
-chmod +x kolva-agent-linux-desktop
-./kolva-agent-linux-desktop
+chmod +x kolva-agent-linux-desktop-v<version>
+./kolva-agent-linux-desktop-v<version>
 ```
 
 Installs for your user only — no `sudo` needed.
@@ -75,14 +76,14 @@ Installs for your user only — no `sudo` needed.
 
 ## Linux — server / headless
 
-**Download:** `kolva-agent-linux-amd64`
+**Download:** `kolva-agent-linux-server-v<version>`
 
 🔑 **This is the only one that needs root**, because it installs a system service so the agent
 survives a reboot:
 
 ```bash
-chmod +x kolva-agent-linux-amd64
-sudo ./kolva-agent-linux-amd64
+chmod +x kolva-agent-linux-server-v<version>
+sudo ./kolva-agent-linux-server-v<version>
 ```
 
 ## If you prefer to be explicit
@@ -91,7 +92,7 @@ Running the binary with no arguments installs it. You can also say so outright, 
 exactly the same thing:
 
 ```bash
-./kolva-agent-darwin install
+./kolva-agent-mac-v<version> install
 ```
 
 Both forms are supported. Use whichever you find clearer.
@@ -102,19 +103,19 @@ Both forms are supported. Use whichever you find clearer.
 
 ## Windows
 
-**Download:** `KolVa-<version>-Setup.exe`
+**Download:** `kolva-v<version>.exe`
 
 Double-click it and follow the installer. **Windows shows the same one-time "Windows protected
 your PC" box** — **More info** → **Run anyway**.
 
 ## Linux
 
-**Download:** `kolva_<version>_amd64.deb`
+**Download:** `kolva-v<version>.deb`
 
 Open a terminal in your Downloads folder and run:
 
 ```bash
-sudo apt install ./kolva_<version>_amd64.deb
+sudo apt install ./kolva-v<version>.deb
 ```
 
 This installs it properly — it lands in your applications menu, resolves its own dependencies,
@@ -126,7 +127,7 @@ document.
 
 ## Android
 
-**Download:** `KolVa-<version>.apk`
+**Download:** `kolva-v<version>.apk`
 
 Open it on the phone. Android asks once for permission to install apps from this source;
 allow it, then continue.
@@ -207,7 +208,7 @@ gone.
 # Troubleshooting
 
 **The tray icon never appears (Linux).** The desktop download needs a graphical session. On a
-server, use `kolva-agent-linux-amd64` instead.
+server, use `kolva-agent-linux-server-v<version>` instead.
 
 **macOS says the app is damaged or from an unidentified developer.** Run the file from Terminal
 as shown above — it clears the quarantine flag itself on the way in.
